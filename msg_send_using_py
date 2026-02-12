@@ -1,0 +1,14 @@
+import pywhatkit as pt
+students=[ {"name": "Avinash", "present_days": 20, "total_days": 25},
+    {"name": "Anjali", "present_days": 22, "total_days": 25},
+    {"name": "Dileep", "present_days": 18, "total_days": 25},
+    {"name": "Neha", "present_days": 24, "total_days": 25},
+    {"name": "Kiran", "present_days": 21, "total_days": 25} ]
+report="attendence report of students\n"
+for s in students:
+    percentage=(s['present_days'] / s['total_days'])*100
+    report+=f"name:{s['name']}\n"
+    report+=f"present:{s['present_days']}/{s['total_days']}\n"
+    report+=f"attendence:{percentage:.2f}%\n\n"
+print(report)
+pt.sendwhatmsg('+919550544124',report,13,10,8,False)
